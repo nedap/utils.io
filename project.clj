@@ -1,4 +1,4 @@
-(defproject com.nedap.staffing-solutions/utils.io "0.1.0"
+(defproject com.nedap.staffing-solutions/utils.io "0.1.1"
   :description "I/O utilities for Clojure, filling missing parts from clojure.java.io."
   :url "https://github.com/nedap/utils.io"
   :license {:name "Eclipse Public License"

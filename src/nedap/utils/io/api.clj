@@ -28,6 +28,7 @@
 (defn ensure-directory-exists
   "Ensures that `f`, typically a filename (or anything that can be coerced to a File), exists as a directory, by creating it."
   [f]
+  {:pre [f]}
   (let [dir (-> f
                 io/file
                 fs/absolute
