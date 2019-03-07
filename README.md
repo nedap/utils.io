@@ -5,7 +5,7 @@ I/O utilities for Clojure, filling missing parts from clojure.java.io.
 ## Installation
 
 ```clojure
-[com.nedap.staffing-solutions/utils.io "0.1.0"]
+[com.nedap.staffing-solutions/utils.io "0.1.1"]
 ````
 
 ## ns organisation
