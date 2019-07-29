@@ -2,20 +2,18 @@
   (:require
    [clojure.java.io :as io]
    [me.raynes.fs :as fs]
-   [nedap.utils.spec.api :refer [check!]]))
+   [nedap.speced.def :as speced]))
 
 (defn running-in-jar?
   "Is the current Clojure process running as a .jar?"
   []
   (-> *ns* .getClass (.getResource "/") nil?))
 
-(defn copy-file-from-resource
+(speced/defn copy-file-from-resource
   "Finds `resource-name` as a resource, and copies it to `filename-to`.
 
   The directory containing `filename-to` must exist beforehand."
-  [resource-name filename-to]
-  {:pre [(check! string? resource-name
-                 string? filename-to)]}
+  [^string? resource-name, ^string? filename-to]
   (when (and (io/resource resource-name) ;; exists in jar as a resource
              (-> filename-to io/file .exists not)) ;; does not exist in project as a file
     (let [is (-> resource-name io/resource io/input-stream)
@@ -36,4 +34,4 @@
     (when-not (fs/exists? dir)
       (when-not (fs/mkdirs dir)
         (throw (ex-info (str ::ensure-output-directory-exists) {:message "Could not create directory"
-                                                                :dir dir}))))))
+                                                                :dir     dir}))))))

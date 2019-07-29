@@ -1,7 +1,7 @@
 ;; Please don't bump the library version by hand - use ci.release-workflow instead.
 (defproject com.nedap.staffing-solutions/utils.io "0.1.1"
   ;; Please keep the dependencies sorted a-z.
-  :dependencies [[com.nedap.staffing-solutions/utils.spec "0.9.0" :exclusions [org.clojure/spec.alpha]]
+  :dependencies [[com.nedap.staffing-solutions/speced.def "1.0.0"]
                  [me.raynes/fs "1.4.6"]
                  [org.clojure/clojure "1.10.1"]]
 
@@ -41,11 +41,11 @@
   ;; NOTE: deps marked with #_"transitive" are there to satisfy the `:pedantic?` option.
   :profiles {:dev {:dependencies [[cider/cider-nrepl "0.16.0" #_"formatting-stack needs it"]
                                   [com.clojure-goes-fast/clj-java-decompiler "0.2.1"]
-                                  [com.nedap.staffing-solutions/utils.modular "0.4.0"]
+                                  [com.nedap.staffing-solutions/utils.modular "2.0.0"]
                                   [com.stuartsierra/component "0.4.0"]
                                   [com.taoensso/timbre "4.10.0"]
                                   [criterium "0.4.4"]
-                                  [formatting-stack "0.19.3"
+                                  [formatting-stack "1.0.0-alpha3"
                                    :exclusions [rewrite-clj]]
                                   [lambdaisland/deep-diff "0.0-29"]
                                   [medley "1.1.0"]
@@ -62,4 +62,4 @@
              :ci  {:pedantic?    :abort
                    :jvm-opts     ["-Dclojure.main.report=stderr"]
                    :global-vars  {*assert* true} ;; `ci.release-workflow` relies on runtime assertions
-                   :dependencies [[com.nedap.staffing-solutions/ci.release-workflow "1.1.0"]]}})
+                   :dependencies [[com.nedap.staffing-solutions/ci.release-workflow "1.3.0-alpha3"]]}})
