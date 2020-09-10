@@ -2,7 +2,7 @@
 (defproject com.nedap.staffing-solutions/utils.io "1.1.0"
   ;; Please keep the dependencies sorted a-z.
   :dependencies [[com.nedap.staffing-solutions/speced.def "2.0.0"]
-                 [me.raynes/fs "1.4.6"]
+                 [clj-commons/fs "1.5.2"]
                  [org.clojure/clojure "1.10.1"]]
 
   :description "I/O utilities for Clojure, filling missing parts from clojure.java.io."
