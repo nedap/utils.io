@@ -3,7 +3,8 @@
   ;; Please keep the dependencies sorted a-z.
   :dependencies [[com.nedap.staffing-solutions/speced.def "2.0.0"]
                  [clj-commons/fs "1.5.2"]
-                 [org.clojure/clojure "1.10.1"]]
+                 [org.clojure/clojure "1.10.1"]
+                 [org.clojure/tools.cli "1.0.194" #_"transitive"]]
 
   :description "I/O utilities for Clojure, filling missing parts from clojure.java.io."
 
